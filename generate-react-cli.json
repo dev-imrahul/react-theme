@@ -7,9 +7,9 @@
     "default": {
       "path": "src/components",
       "withStyle": false,
-      "withTest": true,
+      "withTest": false,
       "withStory": false,
-      "withLazy": true
+      "withLazy": false
     },
     "page": {
       "path": "src/pages",

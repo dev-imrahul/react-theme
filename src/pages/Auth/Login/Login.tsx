@@ -1,5 +1,5 @@
 import React, { FC, useContext } from 'react';
-import { AuthContext, useAuth } from '../../hooks/useAuth';
+import { AuthContext, useAuth } from '../../../hooks/useAuth';
 
 
 interface LoginProps {}
@@ -7,7 +7,7 @@ interface LoginProps {}
 const Login: FC<LoginProps> = () => {
   const { login }  = useAuth();
   const data = useContext(AuthContext);
-  console.log(data)
+
   const loginHandler = () => {
     if(login)
       login('rahul')
