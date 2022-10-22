@@ -10,3 +10,4 @@ function App() {
 }
 
 export default App;
+// npx generate-react-cli component ComponentName

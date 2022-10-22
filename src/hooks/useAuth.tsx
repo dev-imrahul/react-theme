@@ -19,7 +19,6 @@ export const AuthProvider = (props: JSX.IntrinsicAttributes & { children: ReactN
 
   const login = async(value: string) => {
     setUser(value);
-    navigate('/')
   };
 
   const logout = async () => {
