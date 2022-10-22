@@ -1,5 +1,4 @@
-import { ReactNode } from "react"
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation, useParams, useRoutes } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth"
 
 interface ProtectedRouteType {
@@ -8,8 +7,11 @@ interface ProtectedRouteType {
 
 export const ProtectedRoute = ({ children }: ProtectedRouteType) => {
   const { user }  = useAuth();
+  // return 'hello'
+  let {pathname} = useLocation();
+  console.log(pathname)
   if(!user) {
-    return <Navigate to="/login" />
+    return <Navigate to={`/login?navigate=${pathname}`}  />
   }
 
   return children

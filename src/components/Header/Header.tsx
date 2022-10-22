@@ -1,12 +1,15 @@
-import React, { FC } from 'react';
-import './Header.scss';
-
+import { FC, useContext } from 'react';
+import { HeaderStyled } from '../styled';
+import SwitchBtn from '../Switch-btn/Switch-btn';
 interface HeaderProps {}
 
-const Header: FC<HeaderProps> = () => (
-  <div className="Header" data-testid="Header">
-    Header Component
-  </div>
-);
+
+const Header: FC<HeaderProps> = () => {
+  return (
+    <HeaderStyled>
+      <SwitchBtn />
+    </HeaderStyled>
+  )
+};
 
 export default Header;
