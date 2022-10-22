@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useContext, useMemo } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import useStorage from "./useStorage";
 
 interface authContextType {
@@ -14,12 +14,14 @@ export const AuthContext = createContext<authContextType>({
 
 export const AuthProvider = (props: JSX.IntrinsicAttributes & { children: ReactNode }) => {
   const [user, setUser] = useStorage('user', '');
+  const search  = useLocation().search;
+  const queryParams = new URLSearchParams(search).get('redirect')
 
   const navigate= useNavigate();
 
   const login = async(value: string) => {
     setUser(value);
-    navigate('/')
+    navigate(queryParams ? queryParams : '/')
   };
 
   const logout = async () => {
