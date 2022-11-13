@@ -10,10 +10,10 @@ import {
 } from '@mantine/core';
 import { useLocation, useNavigate } from "react-router-dom";
 import Common from '../Component/Common';
-import { useAuth } from 'hooks/useAuth';
 import { useForm } from 'react-hook-form';
 import ForgotPassword from './ForgotPassword';
 import { useState } from 'react';
+import { useAuth } from '../../../hooks/useAuth';
 
 export default function AuthenticationForm() {
   const navigate = useNavigate();
