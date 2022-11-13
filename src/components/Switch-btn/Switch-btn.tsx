@@ -1,18 +1,24 @@
-import { FC, useContext } from 'react';
-import { RootContext } from '../../hooks/useRoot';
+import { Switch, Group } from '@mantine/core';
+import { IconSun, IconMoonStars } from '@tabler/icons';
+import { FC } from 'react';
+import { useRoot } from '../../hooks/useRoot';
 
-interface SwitchBtnProps {}
+const SwitchToggle: FC<any> = () => {
+  const {toogle, themeType, theme} = useRoot();
 
-const SwitchBtn: FC<SwitchBtnProps> = () => {
-  const {toogle, themeType} = useContext(RootContext);
   return (
     <>
-      <div className="form-check form-switch">
-        <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onChange={toogle} />
-        <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{themeType}</label>
-      </div>
+      <Group position="center" my={30}>
+        <Switch
+          checked={themeType === 'dark'}
+          onChange={toogle}
+          size="lg"
+          onLabel={<IconSun color={theme.palette.primary.contrastText} size={20} stroke={1.5} />}
+          offLabel={<IconMoonStars color={theme.palette.primary.contrastText} size={20} stroke={1.5} />}
+        />
+      </Group>
     </>
-  )
-};
+  );
+}
 
-export default SwitchBtn;
+export default SwitchToggle;

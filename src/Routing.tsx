@@ -1,3 +1,4 @@
+import Register from "pages/Auth/Register/Register";
 import { Route, Routes } from "react-router-dom";
 import Navigation from "./components/Navigation/Navigation.lazy";
 import { RequireAuth } from "./Guard/RequireAuth";
@@ -24,6 +25,7 @@ export default function Routers() {
             </RequireAuth>
           } />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </AuthProvider>
   )

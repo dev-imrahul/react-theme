@@ -1,11 +1,11 @@
 import React, { lazy, Suspense } from 'react';
 
-const LazyHeader = lazy(() => import('./Header'));
+const Header = lazy(() => import('./Header'));
 
-const Header = (props: JSX.IntrinsicAttributes & { children?: React.ReactNode; }) => (
+const LazyHeader = (props: JSX.IntrinsicAttributes & { children?: React.ReactNode; }) => (
   <Suspense fallback={'...loading'}>
-    <LazyHeader {...props} />
+    <Header />
   </Suspense>
 );
 
-export default Header;
+export default LazyHeader;

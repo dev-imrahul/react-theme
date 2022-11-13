@@ -1,4 +1,4 @@
-import { createContext, FC, ReactNode, useCallback, useState } from "react";
+import { createContext, FC, ReactNode, useCallback, useContext, useState } from "react";
 import { DefaultTheme, ThemeProvider } from "styled-components";
 import INITIAL_THEME from "../components/styled/theme-const";
 
@@ -46,4 +46,8 @@ export const RootProvider = ({children}:IRootProvider) => {
     </RootContext.Provider>
     </>
   )
+}
+
+export const useRoot = () => {
+  return useContext(RootContext)
 }
